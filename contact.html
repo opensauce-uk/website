@@ -1,67 +1,222 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Contact Us</title>
-        <link rel="stylesheet" type="text/css" href="assets/global/navbar.css">
-        <link rel="stylesheet" type="text/css" href="contact/body.css">
-        <link rel="stylesheet" type="text/css" href="assets/global/footer.css">
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script>
-        if (window.location.host == 'opensauce.uk' || window.location.host == 'website.opensauce.vercel.app') { document.write('<script async defer data-website-id="0ee69263-8a9c-4e90-9446-cde84c68aa76" src="https://umami.proxied.cloud/umami.js"></sc' + 'ript>') }
-        </script>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="home.html" id="navbar-logo"><img src="https://via.placeholder.com/227x109.png"></a>
-                <a class="navbar-text" id="navbar-login">Login/Sign Up</a>
-                <input class="navbar-text" id="navbar-search" class="txt" type="text" placeholder="Search...">
-                <a id="navbar-profile"><img src="https://via.placeholder.com/130x130.png"></a>
-            </nav>
-        </header>
-        <main>
-            <div id="left">
-                <p>Contact Page</p>
-                <img src="https://via.placeholder.com/601x382.png">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas dui mollis ligula placerat aliquet. Donec porta, orci lobortis ultrices placerat, elit magna dignissim felis, ut placerat urna ipsum sodales tellus. </p>
-            </div>
-            <form action="send-mail.php" method="POST">
-                <div id="right">
-                    <div class="input-container" >
-                        <p>First Name</p>
-                        <input name="p1" id="first-name" type="text">
-                    </div>
-                    <div class="input-container">
-                        <p>Last Name</p>
-                        <input name="p2" id="last-name" type="text">
-                    </div>
-                    <div class="input-container-full">
-                        <p>Email Address</p>
-                        <input name="p3" id="email" type="email">
-                    </div>
-                    <div class="input-container-full">
-                        <p>Reason for Contact</p>
-                        <input name="p4" id="message-header" type="text">
-                    </div>
-                    <div id="multiline-input">
-                        <p>Details</p>
-                        <textarea name="p5" id="message-body" name="mulinin"></textarea>
-                    </div>
-                    <input name="p6" type="hidden" value="botcheck">
-                    <input name="email" style="display:none;" type="text">
-                    <div class="g-recaptcha" data-sitekey="6LdWntsZAAAAAMYm7V9dCRP5UffUmIPj9xhRhm8R"></div>
-                    <input id="submit-button" value="Submit" type="submit">
+  <head>
+    <title>Contact Us</title>
+    <!-- CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Salsa&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/global/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="contact/body.css" />
+    <link rel="stylesheet" type="text/css" href="assets/global/footer.css" />
+    <link rel="stylesheet" type="text/css" href="assets/global/account.css" />
+
+    <!-- JavaScript -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      if (
+        window.location.host == "opensauce.uk" ||
+        window.location.host == "website.opensauce.vercel.app"
+      ) {
+        document.write(
+          '<script async defer data-website-id="0ee69263-8a9c-4e90-9446-cde84c68aa76" src="https://umami.proxied.cloud/umami.js"></sc' +
+            "ript>"
+        );
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/global/navbar.js" defer></script>
+  </head>
+  <!-- Main Content-->
+  <body>
+    <div id="page-container">
+      <header>
+        <div id="search-box">
+          <a
+            ><img
+              src="https://cdn.opensauce.uk/assets/global/magnifying-glass.png"
+          /></a>
+          <input type="text" placeholder="Search..." />
+        </div>
+        <div id="logo">
+          <a href="index.html"
+            ><img src="https://cdn.opensauce.uk/logo/new.svg"
+          /></a>
+        </div>
+        <div id="container-right">
+          <div id="login-signup">
+            <a href="login.html">Log in/Sign up</a>
+          </div>
+          <div id="account">
+            <button id="account-button" type="button">
+              <img src="https://cdn.opensauce.uk/assets/global/Account.png" />
+            </button>
+
+            <section id="account-page">
+              <div id="account-submenu-container">
+                <div id="account-favorites">
+                  <button
+                    title="Scroll Left"
+                    class="left-button"
+                    onclick="AccountLeft()"
+                  >
+                    <img
+                      src="https://cdn.opensauce.uk/assets/global/Arrow.svg"
+                    />
+                  </button>
+
+                  <div id="favorites-js"></div>
+
+                  <button
+                    title="Scroll Left"
+                    class="right-button"
+                    onclick="AccountRight()"
+                  >
+                    <img
+                      src="https://cdn.opensauce.uk/assets/global/Arrow.svg"
+                    />
+                  </button>
                 </div>
-            </form>
-        </main>
-        <footer>
-            <p>OpenSauce</p>
-            <div id="footer-links">
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="legal/content.html">Content Policy</a>
-                <a href="legal/privacy.html">Privacy Policy</a>
-            </div>
-        </footer>
-    </body>
+                <div id="account-settings-menu">
+                  <form id="change-account-settings">
+                    <div id="pword">
+                      <div id="cpassword">
+                        <label for="cpass">Current Password:</label><br />
+                        <input id="cpass" />
+                      </div>
+                      <div id="npassword">
+                        <label for="npass">New Password:</label><br />
+                        <input id="npass" />
+                      </div>
+                    </div>
+                    <div id="bottom-account">
+                      <div>
+                        <label for="account-bio">Biography:</label><br />
+                        <textarea id="account-bio"></textarea>
+                      </div>
+                      <div id="image-upload-div">
+                        <img
+                          id="account-image-upload"
+                          src="https://cdn.opensauce.uk/assets/global/Account.png"
+                        />
+                        <input
+                          type="file"
+                          name="image-upload"
+                          id="image-upload"
+                          data-max-size="5000"
+                        />
+                        <input
+                          type="submit"
+                          name="submit-account"
+                          id="submit-account"
+                          value="Submit"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div id="account-menu-container">
+                <div id="account-menu">
+                  <img
+                    id="account-image"
+                    src="https://cdn.opensauce.uk/assets/global/Account.png"
+                  />
+                  <p id="account-name"></p>
+                  <p id="account-email"></p>
+                  <button
+                    id="my-favorites"
+                    onclick="ToggleFavorites(this)"
+                    type="button"
+                  >
+                    My Favorites
+                  </button>
+                  <button
+                    id="account-settings"
+                    onclick="ToggleSettings(this)"
+                    type="button"
+                  >
+                    Account Settings
+                  </button>
+                  <button id="sign-out" type="button">Sign Out</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div id="left">
+          <div class="input-container">
+            <p>First Name</p>
+            <input name="p1" id="first-name" type="text" />
+          </div>
+          <div class="input-container">
+            <p>Last Name</p>
+            <input name="p2" id="last-name" type="text" />
+          </div>
+          <div class="input-container-full">
+            <p>Email Address</p>
+            <input name="p3" id="email" type="email" />
+          </div>
+          <div class="input-container-full">
+            <p>Subject</p>
+            <input name="p4" id="message-header" type="text" />
+          </div>
+          <div id="multiline-input">
+            <p>Message</p>
+            <textarea name="p5" id="message-body"></textarea>
+          </div>
+          <input name="p6" type="hidden" value="botcheck" />
+          <input name="email" style="display: none" type="text" />
+          <div
+            class="g-recaptcha"
+            data-sitekey="6LdWntsZAAAAAMYm7V9dCRP5UffUmIPj9xhRhm8R"
+          ></div>
+          <input id="submit-button" value="Submit" type="submit" />
+        </div>
+        <div id="right">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.021178927387!2d-1.0816269846930235!3d51.531171379638984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48769712ace0c781%3A0x98bd293631482a1d!2sOpensauce!5e0!3m2!1sen!2suk!4v1611419362092!5m2!1sen!2suk"
+            width="400"
+            height="300"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
+
+          <div class="contact-info">
+            <textarea readonly>
+ 
+    Address: 4 Wood Ln, Woodcote, Reading, RG8 0PU 
+    Email: contact@opensauce.uk 
+    Facebook: OpenSauceUK
+    Twitter: @opensauce
+    Instagram: OpenSauce
+    LinkedIn: OpenSauceUK
+ </textarea
+            >
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div id="footer-one">
+        <a>Ingredients</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="legal/privacy.html">Privacy Policy</a>
+        <a>Authors</a>
+        <a>Terms of Service</a>
+      </div>
+      <div id="footer-two">
+        <a href="legal/content.html">Content Policy</a>
+        <a>Recent Posts and Articles</a>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,101 +1,124 @@
+body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
 #left {
-    box-sizing: border-box;
-    display: inline-block;
-    margin-top: 29px;
-    margin-left: 6.4%;
-    margin-right: 9.7%;
-    width: 30%;
+  box-sizing: border-box;
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 30%;
+  margin-right: 9.7%;
+  width: 30%;
 }
 
 #left p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 25px;
-    color: #707070;
-    width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  color: black;
+  width: 100%;
 }
 
 #right {
-    box-sizing: border-box;
-    display: inline-block;
-    vertical-align: top;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 30%;
 }
-
+#right iframe {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 35px 35px 0 0;
+}
 .input-container {
-    display: inline-block;
-    margin-top: 29px;
-    width: 47%;
-    margin-right: 15px;
+  display: inline-block;
+  margin-top: 29px;
+  width: 47%;
+  margin-right: 15px;
 }
 
 .input-container p {
-    display: inline-block;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 25px;
-    color: #707070;
+  display: inline-block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  color: black;
 }
 
 .input-container input {
-    display: grid;
-    border: 1px solid #707070;
-    width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 68px;
-    color: #707070;
-    box-sizing: border-box;
-    font-size: 35px;
+  display: grid;
+  border: 2px solid black;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 68px;
+  color: black;
+  box-sizing: border-box;
+  font-size: 35px;
 }
 
 .input-container-full {
-    margin-top: 7px;
-    width: 96%;
+  margin-top: 7px;
+  width: 96%;
 }
 
 .input-container-full p {
-    display: inline-block;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 25px;
-    color: #707070;
+  display: inline-block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  color: black;
 }
 
 .input-container-full input {
-    display: grid;
-    border: 1px solid #707070;
-    width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 68px;
-    color: #707070;
-    box-sizing: border-box;
-    font-size: 35px;
+  display: grid;
+  border: 1px solid black;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 68px;
+  color: black;
+  box-sizing: border-box;
+  font-size: 35px;
 }
-
+#multiline-input textarea {
+  height: 150px;
+  font-size: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 #multiline-input p {
-    margin-top: 7px;
-    font-size: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #707070;
+  margin-top: 7px;
+  font-size: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
 }
 
 textarea {
-    font-size: 15px;
-    resize: vertical;
-    border: 1px solid #707070;
-    width: 96%;
-    margin-bottom: 10px;
+  font-size: 15px;
+  resize: vertical;
+  border: 1px solid black;
+  width: 96%;
+  margin-bottom: 10px;
 }
 
 form {
-    display: inline;
+  display: inline;
 }
 
 #submit-button {
-    margin-top: 10px;
-    width: 18%;
-    font-size: 30px;
-    height: 50px;
-    box-sizing: border-box;
+  margin-top: 10px;
+  width: 18%;
+  font-size: 30px;
+  height: 50px;
+  box-sizing: border-box;
 }
 
 #submit-button:hover {
-    border: 2px solid #707070;
-    cursor: pointer;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.contact-info textarea {
+  resize: none;
+  display: inline-block;
+  width: 400px;
+  height: 230px;
+  white-space: pre-wrap;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 35px 35px 0 0;
 }

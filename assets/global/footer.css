@@ -1,80 +1,76 @@
 body {
-    position: relative;
-    min-height: 100vh;
+  position: relative;
+  min-height: 100vh;
 }
 
-#page-container  {
-    padding-bottom: 10rem;
+#page-container {
+  padding-bottom: 10rem;
 }
-
 
 footer {
-    position: absolute;
-    bottom: 0;
-    height: 10rem;
-    width: 77%; /* 1628 / 1920 */ 
-    margin-left: 7.604166%;
-    background-color:rgba(255, 255, 255, 0.5);
-    padding-left: 4.0123456790123455%; /* 65 / 1620 */ 
-    padding-right: 4.0123456790123455%; /* 65 / 1620 */
-    border-radius: 35px 35px 0 0;
+  position: absolute;
+  bottom: 0;
+  height: 10rem;
+  width: 77%; /* 1628 / 1920 */
+  margin-left: 7.604166%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-left: 4.0123456790123455%; /* 65 / 1620 */
+  padding-right: 4.0123456790123455%; /* 65 / 1620 */
+  border-radius: 35px 35px 0 0;
 }
 
-footer div{
-    margin-bottom: 25px;
+footer div {
+  margin-bottom: 25px;
 }
 
-#footer-one{
-    display: flex;
-    width: 100%; /* 1620 / 1920 */
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-between;
+#footer-one {
+  display: flex;
+  width: 100%; /* 1620 / 1920 */
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
 }
 
 #footer-two {
-    display: flex;
-    width: 100%; /* 1620 / 1920 */
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  width: 100%; /* 1620 / 1920 */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #footer-two a {
-    margin-right: 8.456790123456791%; /* 137 / 1620 */
+  margin-right: 8.456790123456791%; /* 137 / 1620 */
 }
 
-footer div a{
-    font-size: 2rem;
+footer div a {
+  font-size: 2rem;
 }
 
 footer div a:hover {
-    color: gray;
+  color: gray;
 }
 
 @media screen and (max-width: 1100px) {
+  #footer-one {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+  }
 
-    #footer-one {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0;
-    }
+  #footer-two {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  #footer-two a {
+    margin-right: 0;
+  }
 
-    #footer-two {
-        margin-top: 0;
-        flex-direction: column;
-        align-items: center;
-        
-    }
-    #footer-two a {
-        margin-right: 0;
-    }
+  #page-container {
+    padding-bottom: 20rem;
+  }
 
-    #page-container  {
-        padding-bottom: 20rem;
-    }
-
-    footer {
-        height: 22rem;
-    }
-
+  footer {
+    height: 22rem;
+  }
 }
