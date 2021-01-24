@@ -2,10 +2,6 @@
 article div::-webkit-scrollbar {
   display: none;
 }
-body {
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-}
 
 button:focus {
   outline: 0;
