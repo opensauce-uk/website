@@ -24,7 +24,7 @@ app.get("/user/:user", async function (req, res) {
   if (user.statusCode == 403)
     return res.sendFile(path.join(__dirname + "/errorpages/403.html"));
   user = JSON.parse(user.body);
-  return res.render("profile.ejs", {
+  return res.status(200).render("profile.ejs", {
     username: user.username,
     name: user.name,
     email: user.email,
