@@ -71,7 +71,7 @@ root /opt/example/website;
 
   
 
-index home.html;
+index index.html;
 
   
 

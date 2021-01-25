@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Salsa&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/global/profile.css" />
+
+    <!-- JavaScript -->
+    <script>
+      if (
+        window.location.host == "opensauce.uk" ||
+        window.location.host == "website.opensauce.vercel.app"
+      ) {
+        document.write(
+          '<script async defer data-website-id="0ee69263-8a9c-4e90-9446-cde84c68aa76" src="https://umami.proxied.cloud/umami.js"></sc' +
+            "ript>"
+        );
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title><%= name %></title>
+  </head>
+  <!-- Main Content-->
+  <body>
+      <main>
+<!-- Navbar -->
+<div class="nav">
+  <div class="container">
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <div class="container">
+      <img src="<%= avatar %>" class="profile-photo">
+        <p class="profile-name"><%= name %></p>
+        <span class="label requestor-type-<%= role %>"><%= role %>  </span>
+
+        <p class="profile-detail"><%= biography %></p>
+    </div>
+  </div>
+
+  <!-- Detail Section -->
+  <div class="detail-section">
+    <div class="container">
+
+    </div>
+  </div>
+</div>
+
+      </main>
+
+
+
+  </body>
+</html>
