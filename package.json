@@ -1,19 +1,17 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "OpenSauce website",
+  "description": "OpenSauce Website",
   "main": "index.js",
   "dependencies": {
     "centra": "^2.4.2",
-    "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "node .",
-    "lint": "npx prettier --write .",
-    "check": "node --check . && npx prettier --write ."
+    "check": "npx prettier --write . && node --check ."
   },
   "repository": {
     "type": "git",
