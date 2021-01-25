@@ -1,10 +1,19 @@
+---
 kind: pipeline
+type: ssh
 name: default
 
+server:
+  host:
+    from_secret: host
+  user:
+    from_secret: user
+  password:
+    from_secret: password
+
 steps:
-- name: syntax
-  image: node:12
-  commands:
-  - node --check .
-  - npm ci 
-  - npm run check
+  - name: copy
+    commands:
+      - "cd /opt/website"
+      - "git pull"
+      - "pm2 restart website"

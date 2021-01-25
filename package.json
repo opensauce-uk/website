@@ -11,6 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "node .",
+    "build": "npm ci",
     "check": "npx prettier --write . && node --check ."
   },
   "repository": {
