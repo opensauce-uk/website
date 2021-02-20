@@ -84,7 +84,7 @@ body {
   padding-top: 30px;
 }
 
-.requestor-type-Admin {
+.requestor-type-Administrator {
   background-color: red;
 }
 
@@ -95,7 +95,9 @@ body {
 .requestor-type-User {
   background-color: #5cb85c;
 }
-
+.requestor-type-Developer {
+  background-color: black;
+}
 .label {
   padding: 1px 3px 2px;
   font-size: 10px;
