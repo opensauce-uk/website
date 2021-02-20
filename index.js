@@ -10,7 +10,7 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.get("/user/:user", async function (req, res) {
+app.get("/users/:user", async function (req, res) {
   let user = await centra(url)
     .path("user")
     .path("get")

@@ -145,6 +145,7 @@
                         id="account-image-upload"
                         src="https://cdn.opensauce.uk/assets/global/Account.png"
                       />
+                      <form method="post" enctype="multipart/form-data">
                       <input
                         type="file"
                         name="image-upload"
@@ -153,10 +154,12 @@
                       />
                       <input
                         type="submit"
-                        name="submit-account"
+                        name="submit"
                         id="submit-account"
                         value="Submit"
                       />
+                    </form>
+                    <script src="upload-avatar.js"></script>
                     </div>
                   </div>
                 </form>
