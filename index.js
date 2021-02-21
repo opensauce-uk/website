@@ -5,9 +5,13 @@ const centra = require("centra");
 const url = "https://api.opensauce.uk";
 
 app.use(express.static(__dirname + "/"));
-
+app.use(express.static(__dirname + "/favicon"));
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/index.html"));
+});
+
+app.get('*', function(req, res){
+  res.status(404).sendFile(path.join(__dirname + "/404.html"));
 });
 
 app.get("/users/:user", async function (req, res) {

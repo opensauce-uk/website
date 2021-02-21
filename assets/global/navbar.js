@@ -1,6 +1,6 @@
 const url = "https://api.opensauce.uk/user/me";
 async function fetchData() {
-  const data = await fetch(url, { headers: {'Authorization': localStorage.auth_token } })
+  const data = await fetch(url, { headers: {'Authorization': localStorage.auth_token || 'Guest' } })
     .then((response) => response.json())
     .then((data) => {
       return data;
@@ -17,7 +17,7 @@ fetchData().then((data) => {
       name: "Todd Howard",
       role: "Writer",
       email: "todd@opensauce.uk",
-      bio: "Bio could not be fetched from api",
+      biography: "Bio could not be fetched from api",
       favorites: [
         {
           Type: "Author",
@@ -137,12 +137,14 @@ function ToggleSettings(idel) {
 }
 
 function GetAccountSettings() {
+  if (!currentUser.avatar) currentUser.avatar = 'https://cdn.opensauce.uk/assets/global/Account.png'
   document.getElementById("account-bio").innerText = currentUser.biography;
   document.getElementById("account-image-upload").src =
     currentUser.avatar;
 }
 
 function GetFavorites() {
+  if (!currentUser.Favorites.length) return
   currentUser.Favorites.forEach((object) => {
     nodeA = document.createElement("a");
     nodeA.href = object.Link;
